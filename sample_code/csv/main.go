@@ -87,8 +87,8 @@ func Unmarshal(data [][]string, v interface{}) error {
 	// assume the first row is a header
 	header := data[0]
 	namePos := make(map[string]int, len(header))
-	for k, v := range header {
-		namePos[v] = k
+	for i, name := range header {
+		namePos[name] = i
 	}
 
 	for _, row := range data[1:] {
